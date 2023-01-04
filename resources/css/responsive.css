@@ -1,0 +1,67 @@
+@media screen and (max-width: 1200px) {
+    .row {
+        margin: 0 1.6rem;
+        max-width: 110rem;
+    }
+    .hero-text-box{
+        width: 90%;
+    }
+    .client-review{
+        width: 100%;
+    }
+
+@media screen and (max-width: 1024px) {
+    .menu{
+        display: none;
+    }
+    .mobile-menu span ion-icon{
+        display: block;
+    }
+    .section-description{
+        width: 100%;
+    }
+    input[type="text"], input[type="email"], textarea{
+        padding: 0.5rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .section-item-box{
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 4rem 4rem;
+    }
+    #testimonial .section-item-box .section-item{
+        grid-template-columns: 1fr;
+    }
+    .client-img{
+        margin: auto;
+    }
+    .client-review{
+        text-align: center;
+    }
+    .client-review p{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    html, body{
+        font-size: 59.5%;
+    }
+    .section-item{
+        margin-bottom: 4rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+     html, body{
+        font-size: 52.5%;
+    }
+    .section-item-box, #portfolio .section-item-box, #testimonial .section-item-box{
+        grid-template-columns: 1fr;
+        grid-gap: 3rem;
+    }
+    #footer ul li a{
+        font-size: 1.8rem;
+    }
+   
+}

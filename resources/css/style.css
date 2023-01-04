@@ -1,0 +1,573 @@
+/* ======================================
+
+Template Name: Cuda Single Page Portfolioeady Template
+Template URI: 
+Author: Asif Hanzala
+Author URI: 
+Version: 1.0
+Description: An awesome personal portolio template.
+Support: 
+
+========================================*/
+
+/* ======================================
+
+CSS INDEX
+---------
+1. Google Fonts
+2. Common CSS
+3. Reusable Components
+4. Header Section
+5. Service Section
+6. Team Section
+7. Skill Section
+8. Portfolio Section
+9. Testimonial Section
+10. Contact Section
+11. Footer Section
+========================================*/
+/* 1. Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+/* 2. Common CSS */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*
+html{
+    scroll-behavior: smooth;
+}
+*/
+
+html, body {
+    color: #000;
+    background: #fff;
+    font-size: 62.5%;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 700;
+}
+h2{
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    font-weight: 600;
+}
+h3{
+    font-size: 2.4rem;
+    text-transform: uppercase;
+}
+h4{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 2.5rem;
+}
+p{
+    font-size: 1.6rem;
+}
+a:link,
+a:hover {
+    text-decoration: none;
+}
+.active {
+  background: #643a79;
+}
+ul li{
+    display: inline-block;
+}
+:focus {
+ outline:0;
+}
+/* 3. Reusable Components */
+.row{
+    max-width: 110rem;
+    margin: auto;
+}
+section{
+    width: 100%;
+    height: 100%;
+    padding: 8rem 0;
+}
+.section-title{
+    text-align: center;
+    color: #fff;
+    margin-bottom: 5rem;
+}
+.section-title h2{
+    margin-bottom: 2rem;
+}
+.section-title h2::after{
+    content: '';
+    display: block;
+    clear: both;
+    background: #14a58c;
+    height: 0.4rem;
+    width: 8.5rem;
+    margin: 2rem auto;
+}
+.section-description {
+    font-size: 1.8rem;
+    width: 60%;
+    margin: auto;
+    line-height: 3rem;
+}
+.section-item-box{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:1rem;
+    text-align: center;
+}
+.section-item img{
+    height: 12rem;
+}
+.section-item h3 {
+  margin: 2rem 0;
+}
+.btn {
+    color: #fff;
+    background: #eb7d4b;
+    padding: 1.5rem 6rem;
+    font-size: 1.6rem;
+    border-radius: .3rem;
+    display: inline-block;
+    margin-top: 3rem;
+    border-bottom: .3rem solid #c86a40;
+}
+
+/* ======================================
+4. HEADER SECTION
+========================================*/
+#hero{
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(135,80,156,.9)), to(rgba(135,80,156,.9))), url(img/hero-bg.jpg) no-repeat center top / cover;
+    background: linear-gradient(rgba(135,80,156,.9), rgba(135,80,156,.9)), url(img/hero-bg.jpg) no-repeat center top / cover;
+    width: 100%;
+    height: 100vh;
+}
+nav{
+    overflow: hidden;
+}
+nav.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(135,80,156,.9);
+    box-shadow: 0 0.3rem 0.5rem rgb(255 255 255 / 90%);
+    z-index: 999;
+}
+nav.sticky .logo{
+    padding: 0;
+}
+nav.sticky .menu{
+    padding-top: 0.7rem;
+}
+nav.sticky .menu ul li a{
+    padding: 0 1rem;
+}
+nav.sticky span.open-menu ion-icon{
+    padding: 0;
+}
+#menu-item-box{
+    width: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+.menu-item{
+    position: relative;
+    top: 20%;
+    text-align: center;
+    margin-top: 3rem;
+}
+.menu-item a {
+    display: block;
+    font-size: 3rem;
+    color: #999;
+    text-transform: uppercase;
+    transition: .5s;
+}
+.menu-item a:hover{
+    color:#fff;
+}
+
+span.open-menu {
+    float: right;
+}
+
+.mobile-menu span ion-icon {
+    font-size: 4.6rem;
+    color: #fff;
+    padding-top: 1.6rem;
+    display: none;
+}
+.mobile-menu span ion-icon:hover{
+    cursor: pointer;
+}
+
+.logo{
+    float: left;
+    padding-top: 1.6rem;
+}
+.menu{
+    float: right;
+    padding-top: 2.8rem;
+}
+.menu ul li {
+    margin: 0 1.4rem;
+}
+.menu ul li a {
+    font-size: 1.6rem;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 0 1rem;
+    border-radius: .3rem;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+.menu ul li:hover a {
+  background: #643a79;
+}
+
+#hero nav::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.hero-text-box {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 110rem;
+}
+.hero-text-box h1 {
+    font-size: 4rem;
+    color: #fff;
+}
+
+/* ======================================
+5. SERVICE SECTION
+========================================*/
+#service{
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(23,194,164,.9)), to(rgba(23,194,164,.9))), url(img/services-bg.jpg) no-repeat center top / cover;
+    background: linear-gradient(rgba(23,194,164,.9), rgba(23,194,164,.9)), url(img/services-bg.jpg) no-repeat center top / cover;
+    color: #fff;
+}
+/* ======================================
+6. TEAM SECTION
+========================================*/
+#team{
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(231,241,248,.9)), to(rgba(231,241,248,.9))), url(img/team-bg.jpg) no-repeat center top / cover fixed;
+    background: linear-gradient(rgba(231,241,248,.9), rgba(231,241,248,.9)), url(img/team-bg.jpg) no-repeat center top / cover fixed;
+}
+#team .section-title{
+    color: #3c4761;
+}
+#team .section-title h2::after{
+   background: #c8d9e5;
+}
+
+#team .section-item h3 {
+    color: #27283d;
+    margin-bottom: 0;
+}
+#team .section-item img {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+}
+#team .section-item span{
+    color:#30bae7;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+#team .section-item p{
+    color: #3c4761;
+}
+.social-link ion-icon {
+    background: #bdd1df;
+    color: #fff;
+    width: 2rem;
+    height: 2rem;
+    padding: 1rem;
+    border-radius: 50%;
+    margin: 0 .5rem;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+.social-link {
+    margin-top: 3.5rem;
+}
+.social-link ul li:hover a ion-icon {
+  background: #393939;
+}
+/* ======================================
+7. SKILL SECTION
+========================================*/
+#skill{
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.9)), to(rgba(255,255,255,.9))), url(img/skill-bg.jpg) no-repeat center top / cover;
+    background: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.9)), url(img/skill-bg.jpg) no-repeat center top / cover;
+}
+#skill .section-title{
+    color: #3c4761;
+}
+#skill .section-title h2::after{
+   background: #dfe8ed;
+}
+#skill .section-item h3{
+    color: #3c4761;
+}
+svg.radial-progress {
+  height: auto;
+  max-width: 200px;
+  padding: 1em;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  width: 100%;
+}
+
+svg.radial-progress circle {
+  fill: rgba(0,0,0,0);
+  stroke: #30bae7;
+  stroke-dashoffset: 219.91148575129; 
+  stroke-width: 5;
+}
+svg.radial-progress.html circle{
+    stroke: #d74680;
+}
+svg.radial-progress.gd circle{
+    stroke: #15c7a8;
+}
+svg.radial-progress.ui circle{
+    stroke: #eb7d4b;
+}
+
+svg.radial-progress circle.incomplete {
+    opacity: 0.25; 
+}
+
+svg.radial-progress circle.complete { 
+    stroke-dasharray: 219.91148575129; 
+}
+
+svg.radial-progress text {
+    fill: #3c4761;
+    text-anchor: middle;
+    font-size: 1.5rem;
+}
+
+/* ======================================
+8. PORTFOLIO SECTION
+========================================*/
+#portfolio{
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,221,153,.9)), to(rgba(255,221,153,.9))), url(img/portfolio-bg.jpg) no-repeat center top / cover fixed;
+    background: linear-gradient(rgba(255,221,153,.9), rgba(255,221,153,.9)), url(img/portfolio-bg.jpg) no-repeat center top / cover fixed;
+    text-align: center;
+}
+#portfolio .section-title{
+    color: #3c4761;
+}
+#portfolio .section-title h2::after{
+   background: #e5c37f;
+}
+#portfolio .section-item-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4rem;
+}
+#portfolio .section-item-box img{
+    width: 100%;
+    height: auto;
+}
+#portfolio .section-item{
+    padding: 1.8rem 0;
+}
+.portfolio-filter {
+    margin: 2.5rem 0;
+}
+
+.portfolio-filter button {
+    background: #ebc985;
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    border: 0;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    color: #3c4761;
+    margin: 0.5rem;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.portfolio-filter .mixitup-control-active {
+    background: #fff;
+}
+
+button:hover {
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 0.3rem 0.5rem rgb(60 71 97 / 50%);
+    box-shadow: inset 0 0.3rem 0.5rem rgb(60 71 97 / 50%);
+}
+/* ======================================
+9. TESTIMONIAL SECTION
+========================================*/
+#testimonial{
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(215,70,128,.9)), to(rgba(215,70,128,.9))), url(img/testimonial-bg.jpg) no-repeat center top / cover;
+    background: linear-gradient(rgba(215,70,128,.9), rgba(215,70,128,.9)), url(img/testimonial-bg.jpg) no-repeat center top / cover;
+}
+
+#testimonial .section-title h2::after{
+   background: #fff;
+}
+
+#testimonial .section-item {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+}
+
+#testimonial .section-item-box {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4rem 5rem;
+}
+
+#testimonial .section-item-box .section-item {
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+
+}
+
+.client-img {
+    width: 10rem;
+}
+.client-img img {
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+}
+
+.client-review {
+    color: #fff;
+    text-align: start;
+}
+
+.client-review p {
+    font-size: 2.1rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.client-review h3 {
+    margin: 0;
+}
+.client-review span {
+    color: #fd9;
+    font-size: 1.8rem;
+}
+
+/* ======================================
+10. CONTACT SECTION
+========================================*/
+#contact{
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(60,84,153,.9)), to(rgba(60,84,153,.9))), url(img/contact-bg.jpg) no-repeat center top / cover fixed;
+    background: linear-gradient(rgba(60,84,153,.9), rgba(60,84,153,.9)), url(img/contact-bg.jpg) no-repeat center top / cover fixed;
+    text-align: center;
+}
+#contact .section-title h2::after{
+    background: #273a71;
+}
+
+input[type="text"],input[type="email"],textarea {
+    font-family: inherit;
+    line-height: 1.15;
+    background: #273a71;
+    color: #fff;
+    width: 100%;
+    padding: 1.8rem;
+    font-size: 1.6rem;
+    border: .1rem solid #273a71;
+    border-radius:.5rem;
+    margin: .5rem 0;
+}
+input.name,input.email{
+    width: 49.5%;
+}
+.name{
+    float: left;
+}
+.email{
+    float: right;
+}
+textarea{
+    height:20rem;
+}
+form{
+    width: 70%;
+    margin:auto;
+}
+form ::-webkit-input-placeholder {
+    color: #fff;
+    text-transform:capitalize;
+}
+form :-ms-input-placeholder {
+    color: #fff;
+    text-transform:capitalize;
+}
+form ::placeholder {
+    color: #fff;
+    text-transform:capitalize;
+}
+.submit-btn .btn {
+     border:0;
+     border-bottom:.3rem solid #299ec5;
+     background:#30bae7
+}
+.submit-btn .btn:hover {
+     cursor:pointer
+}
+/* ======================================
+11. FOOTER SECTION
+========================================*/
+#footer{
+     background:#344b8e;
+     padding:3rem 0;
+     text-align:center;
+     border-top:.1rem solid rgba(255,255,255,.3)
+}
+#footer ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+#footer ul li a {
+    color: #fff;
+    font-size: 2.5rem;
+    display: inline-block;
+}
+
+#footer ul li a ion-icon {
+    font-size: 4rem;
+    margin-right: .5rem;
+}
